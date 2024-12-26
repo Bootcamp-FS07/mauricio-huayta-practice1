@@ -8,7 +8,13 @@ function thetaFormula(radius, arc, angle) {
     return parseFloat((radius * angle).toFixed(3));
   if (radius === "?" && arc !== "?" && angle !== "?")
     return parseFloat((arc / angle).toFixed(3));
-  if (radius !== "?" && arc !== "?" && angle !== "?")
-    return radius === arc / angle;
+  // Given all three values returns a boolean value.
+  if (
+    typeof radius === "number" &&
+    typeof arc === "number" &&
+    typeof angle === "number"
+  )
+    return radius == arc / angle;
+
   return null;
 }
